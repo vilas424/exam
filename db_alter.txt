@@ -1,0 +1,61 @@
+CREATE TABLE `admin1` (`adminname` varchar(30),`password` varchar(30),primary key(`adminname`,`password`));
+
+CREATE TABLE `faculty` (`facultyname` varchar(30),`class` varchar(30),`subject` varchar(30));
+
+INSERT INTO `reg` (`adminname`, `password`) VALUES
+('admin', 'admin');
+
+INSERT INTO `faculty`VALUES ('Pradeep', '8','Science');
+
+INSERT INTO `reg` (`userid`, `name`, `mobile`, `email`, `password`, `usertype`) VALUES
+(22, 'admin', '1231231230', 'admin@gmail.com', 'admin', 'ADMIN');
+
+
+CREATE TABLE IF NOT EXISTS `tt` (
+  `tableid` int(11) NOT NULL AUTO_INCREMENT,
+  `class` int(25) NOT NULL,
+  `subject` varchar(30) NOT NULL,
+  `date` varchar(30) NOT NULL,
+  `time` varchar(30) NOT NULL,
+  PRIMARY KEY (`tableid`)
+) ;
+
+INSERT INTO `tt` VALUES
+(NULL, '6', 'Science', '12-12-2012', '12 to 2');
+
+CREATE TABLE IF NOT EXISTS `assignments` (
+  `assign_id` int(11) NOT NULL AUTO_INCREMENT,
+  `assign_name` varchar(50) NOT NULL,
+  `assign_class` varchar(10) NOT NULL,
+  `assign_subject` varchar(50) NOT NULL,
+  `assign_doa` varchar(20) NOT NULL,
+  `assign_dod` varchar(20) NOT NULL,
+  `assign_givenby` varchar(50) NOT NULL,
+  `assign_path` varchar(50) NOT NULL,
+  PRIMARY KEY (`assign_id`)
+);
+
+CREATE TABLE IF NOT EXISTS `notes` (
+  `notes_id` int(11) NOT NULL AUTO_INCREMENT,
+  `lecture_name` varchar(50) NOT NULL,
+  `class` varchar(10) NOT NULL,
+  `subject` varchar(50) NOT NULL,
+  `notes_path` varchar(50) NOT NULL,
+  PRIMARY KEY (`notes_id`)
+);
+
+CREATE TABLE IF NOT EXISTS `qpapers` (
+  `qp_id` int(11) NOT NULL AUTO_INCREMENT,
+  `class` varchar(10) NOT NULL,
+  `subject` varchar(50) NOT NULL,
+  `qpfile` varchar(50) NOT NULL,
+  PRIMARY KEY (`qp_id`)
+);
+
+
+INSERT INTO `assignments` VALUES
+(NULL, 'assignment1', '6th', 'English', '12-12-2012', '15-12-2012', 'pradeep', 'assignments/assignment1.docx');
+
+CREATE TABLE `student` (`stname` varchar(30),`class` varchar(30));
+
+insert into student values ('surabhi', '6');
